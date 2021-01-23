@@ -1,0 +1,10 @@
+---
+
+- name: PODMAN CNI | Configure
+  template:
+    src: etc/cni/net.d/87-podman-bridge.conflist.j2
+    dest: /etc/cni/net.d/87-podman-bridge.conflist
+    owner: root
+    group: root
+    mode: 0644
+  notify: Restart podman

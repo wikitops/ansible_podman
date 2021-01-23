@@ -1,0 +1,4 @@
+# {{ ansible_managed }}
+{% for mountpoint in podman_mounts %}
+  {{ mountpoint}}
+{% endfor %}

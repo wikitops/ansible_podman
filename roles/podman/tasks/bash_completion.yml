@@ -1,0 +1,9 @@
+---
+
+- name: PODMAN CONFIG | Bash completion
+  template:
+    src: etc/bash_completion.d/podman.j2
+    dest: /etc/bash_completion.d/podman
+    owner: root
+    group: root
+    mode: 0644

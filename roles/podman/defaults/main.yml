@@ -1,0 +1,29 @@
+---
+
+# Default local user for Podman service
+podman_service_username: "root"
+podman_service_group: "root"
+
+# Default CNI subnet and gateway
+podman_cni_subnet: "10.88.0.0/16"
+podman_cni_gateway: "10.88.0.1"
+
+# Default mount points
+podman_mounts:
+  - /usr/share/rhel/secrets:/run/secrets
+
+# Manage Podman as a service
+podman_start_service: true
+
+# Default container registries where to search images
+podman_registries_search:
+  - registry.access.redhat.com
+  - registry.redhat.io
+  - docker.io
+  - quay.io
+
+# Default insecure container registries where to search images
+podman_registries_insecure: []
+
+# Default container registries blocked
+podman_registries_block: []

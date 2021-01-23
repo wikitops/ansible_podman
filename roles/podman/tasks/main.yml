@@ -1,0 +1,16 @@
+---
+
+- name: PODMAN | Include variables based on the environment
+  include_vars: "{{ ansible_os_family | lower }}.yml"
+
+- name: PODMAN | Installation
+  import_tasks: install.yml
+
+- name: PODMAN | Configuration
+  import_tasks: config.yml
+
+- name: PODMAN | Bash Completion
+  import_tasks: bash_completion.yml
+
+- name: PODMAN | Network
+  import_tasks: cni.yml

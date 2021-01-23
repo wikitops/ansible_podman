@@ -1,0 +1,46 @@
+---
+
+- name: PODMAN CONFIG | Registries
+  template:
+    src: etc/containers/registries.conf.j2
+    dest: /etc/containers/registries.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify: Restart podman
+
+- name: PODMAN CONFIG | Mounts
+  template:
+    src: usr/share/containers/mounts.conf.j2
+    dest: /usr/share/containers/mounts.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify: Restart podman
+
+- name: PODMAN CONFIG | Seccomp
+  copy:
+    src: usr/share/containers/seccomp.json
+    dest: /usr/share/containers/seccomp.json
+    owner: root
+    group: root
+    mode: 0644
+  notify: Restart podman
+
+- name: PODMAN CONFIG | Policies
+  copy:
+    src: etc/containers/policy.json
+    dest: /etc/containers/policy.json
+    owner: root
+    group: root
+    mode: 0644
+  notify: Restart podman
+
+- name: PODMAN CONFIG | Service
+  template:
+    src: lib/tmpfiles.d/podman.conf.j2
+    dest: /lib/tmpfiles.d/podman.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify: Restart podman

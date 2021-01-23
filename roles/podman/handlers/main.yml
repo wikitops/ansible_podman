@@ -1,0 +1,9 @@
+---
+
+- name: Restart podman
+  systemd:
+    name: podman
+    state: restarted
+    daemon-reload: yes
+    enabled: yes
+  when: podman_start_service
