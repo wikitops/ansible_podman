@@ -1,6 +1,6 @@
 ---
 
-- name: PODMAN CONFIG | Bash completion
+- name: PODMAN BASH COMPLETION | Configure
   template:
     src: etc/bash_completion.d/podman.j2
     dest: /etc/bash_completion.d/podman
