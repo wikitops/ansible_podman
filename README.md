@@ -10,9 +10,14 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to run this Ansible playbook :
 
-*   [Vagrant](https://www.vagrantup.com/docs/installation/) must be installed on your computer
-*   Update the Vagrant file based on your computer (CPU, memory), if needed
-*   Update the operating system to deploy in the Vagrant file (default: Ubuntu)
+* [Vagrant](https://www.vagrantup.com/docs/installation/) must be installed on your computer
+* Update the Vagrant file based on your computer (CPU, memory), if needed
+* Update the operating system to deploy in the Vagrant file (default: Ubuntu)
+* Install the Hostmanager Vagrant plugin
+
+```bash
+$ vagrant plugin install vagrant-hostmanager
+```
 
 ### Usage
 
